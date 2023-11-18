@@ -12,7 +12,12 @@
   "gender",
   "email",
   "username",
-  "date_of_birth"
+  "date_of_birth",
+  "picture_one",
+  "picture_two",
+  "picture_three",
+  "picture_four",
+  "picture_five"
  ],
  "fields": [
   {
@@ -63,10 +68,35 @@
    "fieldtype": "Date",
    "label": "Date Of Birth",
    "reqd": 1
+  },
+  {
+   "fieldname": "picture_one",
+   "fieldtype": "Text",
+   "label": "Picture One"
+  },
+  {
+   "fieldname": "picture_two",
+   "fieldtype": "Text",
+   "label": "Picture Two"
+  },
+  {
+   "fieldname": "picture_three",
+   "fieldtype": "Text",
+   "label": "Picture Thee"
+  },
+  {
+   "fieldname": "picture_four",
+   "fieldtype": "Text",
+   "label": "Picture Four"
+  },
+  {
+   "fieldname": "picture_five",
+   "fieldtype": "Text",
+   "label": "Picture Five"
   }
  ],
  "links": [],
- "modified": "2023-11-18 18:35:45.167425",
+ "modified": "2023-11-18 18:43:25.780575",
  "modified_by": "Administrator",
  "module": "Datingapp",
  "name": "UProfile",
