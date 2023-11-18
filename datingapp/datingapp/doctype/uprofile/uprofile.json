@@ -11,7 +11,8 @@
   "last_name",
   "gender",
   "email",
-  "username"
+  "username",
+  "date_of_birth"
  ],
  "fields": [
   {
@@ -56,10 +57,16 @@
    "fieldtype": "Data",
    "label": "Username",
    "unique": 1
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date Of Birth",
+   "reqd": 1
   }
  ],
  "links": [],
- "modified": "2023-11-18 17:56:44.667986",
+ "modified": "2023-11-18 18:35:45.167425",
  "modified_by": "Administrator",
  "module": "Datingapp",
  "name": "UProfile",
