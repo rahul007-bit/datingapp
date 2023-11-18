@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "hash",
  "creation": "2023-11-18 17:44:08.009668",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -96,10 +97,11 @@
   }
  ],
  "links": [],
- "modified": "2023-11-18 18:46:23.266649",
+ "modified": "2023-11-18 22:07:15.200737",
  "modified_by": "Administrator",
  "module": "Datingapp",
  "name": "UProfile",
+ "naming_rule": "Random",
  "owner": "Administrator",
  "permissions": [
   {
