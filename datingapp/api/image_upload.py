@@ -13,7 +13,7 @@ def is_allowed_extension(filename):
 
 
 @frappe.whitelist()
-def upload(picture_number):
+def upload(picture_number,update=None):
     # Check if the provided picture_number is not in the allowed range
     if picture_number not in {"one", "two", "three", "four", "five"}:
         frappe.throw(
@@ -39,9 +39,10 @@ def upload(picture_number):
     file_name = secure_filename(uploaded_file.filename)
     save_path = os.path.join(frappe.get_site_path("private/files"), file_name)
 
-    # Check if the file already exists
-    if os.path.exists(save_path):
-        frappe.throw("File already exists")
+    if not update:
+        # Check if the file already exists
+        if os.path.exists(save_path):
+            frappe.throw("File already exists")
 
     # Check if the file has an allowed extension
     if not is_allowed_extension(file_name):
@@ -56,13 +57,11 @@ def upload(picture_number):
         uploaded_file.save(save_path)
 
         picture_field = "picture_{}".format(picture_number)
-
-        # Set the file path in the respective picture field
-        frappe.db.set_value('UProfile',frappe.session.user,picture_field,save_path)
-        
-
     except Exception as e:
         frappe.throw("Failed to Upload the File")
 
+    
+    frappe.db.set_value('UProfile',frappe.session.user,picture_field,save_path)
+    
     reply_dict = {"sucess": "yes", "info": "File Successfully Uploaded"}
     return reply_dict
