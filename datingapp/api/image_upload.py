@@ -4,14 +4,24 @@ from werkzeug.wrappers import Request, Response
 from werkzeug.utils import secure_filename
 from pathlib import Path
 
-ALLOWED_EXTENSIONS = {"png", "jpeg", "jpg", "zip"}
+ALLOWED_EXTENSIONS = {"png", "jpeg", "jpg"}
 MAX_FILE_SIZE_MB = 10  # Maximum allowed file size in megabytes
 
 def is_allowed_extension(filename):
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @frappe.whitelist()
-def upload():
+def upload(picture_number):
+    # Convert picture_number to an integer
+    try:
+        picture_number = int(picture_number)
+    except ValueError:
+        frappe.throw("Invalid picture number. Please provide a valid integer.")
+
+    # Check if the provided picture_number is not in the allowed range
+    if picture_number not in {1, 2, 3, 4, 5}:
+        frappe.throw("Invalid picture number. Please provide a number between 1 and 5.")
+
     # Get the uploaded file from the request
     uploaded_file = frappe.request.files.get("file")
 
