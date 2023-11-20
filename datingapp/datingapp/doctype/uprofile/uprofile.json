@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "hash",
+ "autoname": "field:user",
  "creation": "2023-11-18 17:44:08.009668",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -83,7 +83,7 @@
   {
    "fieldname": "picture_three",
    "fieldtype": "Text",
-   "label": "Picture Thee"
+   "label": "Picture Three"
   },
   {
    "fieldname": "picture_four",
@@ -97,11 +97,11 @@
   }
  ],
  "links": [],
- "modified": "2023-11-18 22:07:15.200737",
+ "modified": "2023-11-19 20:19:31.883957",
  "modified_by": "Administrator",
  "module": "Datingapp",
  "name": "UProfile",
- "naming_rule": "Random",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
