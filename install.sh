@@ -1,6 +1,6 @@
 #!/bin/bash
 
-bench init --frappe-branch develop bench
+bench init --skip-redis-config-generation --frappe-branch develop bench
 
 cd bench
 
@@ -12,6 +12,6 @@ bench set-config -g developer_mode 1
 
 bench --site datingapp.site add-to-hosts
 
-bench get-app https://github.com/arunmathaisk/datingapp
+bench get-app https://github.com/rahul007-bit/datingapp
 
 bench --site datingapp.site install-app datingapp
